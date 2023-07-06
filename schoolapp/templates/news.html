@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="super_container">
+
+	<!-- Menu -->
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+
+	</div>
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background_container prlx_parent">
+			<div class="home_background prlx" style="background-image:url({% static 'images/news_background.jpg' %})"></div>
+		</div>
+		<div class="home_content">
+			<h1>Жанылыктар</h1>
+		</div>
+	</div>
+
+	<div class="news">
+		<div class="container">
+			<div class="row">
+
+				<!-- News Column -->
+
+				<div class="col-lg-8">
+
+					<div class="news_posts">
+						{% include 'news/simple_post.html' %}
+					</div>
+
+					<!-- Page Nav -->
+
+					<div class="news_page_nav">
+						<ul>
+							<li class="active text-center trans_200"><a href="#">01</a></li>
+							<li class="text-center trans_200"><a href="#">02</a></li>
+							<li class="text-center trans_200"><a href="#">03</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<!-- Sidebar Column -->
+
+				<div class="col-lg-4">
+					<div class="sidebar">
+
+						<!-- Archives -->
+						{% comment %} <div class="sidebar_section">
+							<div class="sidebar_section_title">
+								<h3>Archives</h3>
+							</div>
+							<ul class="sidebar_list">
+								<li class="sidebar_list_item"><a href="#">Design Courses</a></li>
+								<li class="sidebar_list_item"><a href="#">All you need to know</a></li>
+								<li class="sidebar_list_item"><a href="#">Uncategorized</a></li>
+								<li class="sidebar_list_item"><a href="#">About Our Departments</a></li>
+								<li class="sidebar_list_item"><a href="#">Choose the right course</a></li>
+							</ul>
+						</div> {% endcomment %}
+
+						<!-- Latest Posts -->
+
+						<div class="sidebar_section">
+							<div class="sidebar_section_title">
+								<h3>Акыркы посттор</h3>
+							</div>
+
+										<!--latest_posts-->
+							<div class="latest_posts">
+								{% for new in posts  %}
+								<div class="latest_post">
+									<div class="latest_post_image">
+										<img src="{{new.image.url}}" alt="https://unsplash.com/@dsmacinnes">
+									</div>
+									<div class="latest_post_title"><a href="{% url 'single_news' pk=new.id %}">{{new.title}}</a></div>
+									
+								{% endfor %}
+
+							</div>
+
+						</div>
+
+						<!-- Tags -->
+
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- {% include 'footer.html' %} -->
+{% endblock %}
+
+

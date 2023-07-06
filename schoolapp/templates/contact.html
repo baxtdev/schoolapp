@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="super_container">
+
+
+	
+	<!-- Menu -->
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+	
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background_container prlx_parent">
+			<div class="home_background prlx" style="background-image:url({% static 'images/contact_background.jpg' %})"></div>
+		</div>
+		<div class="home_content">
+			<h1>Байланыш</h1>
+		</div>
+	</div>
+
+	<!-- Contact -->
+
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					
+					<!-- Contact Form -->
+					<div class="contact_form">
+						<div class="contact_title">Кабар калтыруу</div>
+
+						<div class="contact_form_container">
+							<form action="post">
+								<input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required.">
+								<input id="contact_form_email" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required.">
+								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
+								<button id="contact_send_btn" type="button" class="contact_send_btn trans_200" value="Submit">жөнөтүү</button>
+							</form>
+						</div>
+					</div>
+						
+				</div>
+
+				<div class="col-lg-4">
+					<div class="about">
+						<div class="about_title">Билим </div>
+
+						<div class="contact_info">
+							<ul>
+								<li class="contact_info_item">
+									<div class="contact_info_icon">
+										<img src="{% static 'images/placeholder.svg' %}" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>
+									г.Ош
+								</li>
+								<li class="contact_info_item">
+									<div class="contact_info_icon">
+										<img src="{% static 'images/smartphone.svg' %}" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>
+									+996 999 999 999
+								</li>
+								<li class="contact_info_item">
+									<div class="contact_info_icon">
+										<img src="{% static 'images/envelope.svg' %}" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>bilim_edu@company.com
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			
+		</div>
+	</div>
+
+
+
+</div>
+{% endblock %}

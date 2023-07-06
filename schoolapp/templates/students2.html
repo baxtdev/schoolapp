@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+	{% block content %}
+
+	<section class="ftco-section" style="margin-top:200px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- <div class="table-wrap"> -->
+						<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+							<thead class="thead-primary">
+								<tr>
+									<th>#</th>
+									<th>Класс</th>
+									<th>Аты</th>
+									<th>Фамилиясы</th>
+								</tr>
+							</thead>
+
+							{% for student2 in students2 %}
+							<tbody>
+								<tr>
+									<th scope="row">{{ student2.id }}</th>
+									<td>{{ student2.l_class }}</td>
+									<td><a href="{% url 'student' pk=student.id %}">{{ student2.first_name }}</a></td>
+									<td><a href="{% url 'student' pk=student.id %}">{{ student2.last_name }}</a></td>
+								</tr>
+							</tbody>
+							{% endfor %}
+
+
+						</table>
+					<!-- </div> -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

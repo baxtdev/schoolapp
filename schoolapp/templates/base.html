@@ -1,0 +1,54 @@
+{% load static %}
+
+<html lang="en">
+<head>
+<title>{% block title %}Билим лицейи{% endblock %}</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.js' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/popper.js' %}">
+<link href="{% static 'plugins/fontawesome-free-5.0.1/css/fontawesome-all.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/elements_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/elements_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/news_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/news_post_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/news_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/news_post_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/teachers_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/teachers_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/contact_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/contact_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/courses_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/courses_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/style_ras.css' %}">
+
+
+
+</head>
+
+<body>
+	<!-- Header -->
+	{% include 'navbar.html' %}
+
+{% block content %}
+
+{% endblock %}
+
+
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

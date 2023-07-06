@@ -1,0 +1,12 @@
+
+
+
+
+{% load static %}
+<main>
+  <ol class="gradient-list">
+    {% for student in students %}
+    <li><a href="{% url 'student' pk=student.id %}">{{ student.first_name }}</a></li>
+    {% endfor %}
+  </ol>
+</main>

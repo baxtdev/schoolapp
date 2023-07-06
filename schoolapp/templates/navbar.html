@@ -1,0 +1,39 @@
+<!--{% load static %}-->
+
+
+<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			<!-- Logo -->
+			<div class="logo_container">
+				<div class="logo">
+					<img src="{% static 'images/logo.png' %}" alt="">
+					<span> <a style="color: #1a1a1a;" href="{% url 'home' %}"> Билим </a></span>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav_container">
+				<div class="main_nav">
+					<ul class="main_nav_list">
+						<li class="main_nav_item"><a href="{% url 'home' %}">Башкы бет</a></li>
+<!--						<li class="main_nav_item"><a href="#">маалымат</a></li>-->
+						<li class="main_nav_item"><a href="{% url 'courses' %}">Класстар</a></li>
+						<li class="main_nav_item"><a href="{% url 'news' %}">Жанылыктар</a></li>
+						<li class="main_nav_item"><a href="{% url 'contact' %}">Байланыш</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<div style="background-color: #1a1a1a;" class="header_side d-flex flex-row justify-content-center align-items-center">
+			<img src="{% static 'images/phone-call.svg' %}" alt="">
+			<span><a style="color: #ffff;" href="tel:+996999999999">+996 999 99 99 99</a></span>
+		</div>
+
+		<!-- Hamburger -->
+		<div class="hamburger_container">
+			<i class="fas fa-bars trans_200"></i>
+		</div>
+
+	</header>
+

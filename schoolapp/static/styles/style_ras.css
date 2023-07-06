@@ -1,0 +1,31 @@
+.fon{
+    display: flex;
+    background-image: url(fon1.jpg);
+   }
+   .math{
+   color: blue;
+   }
+   .img{
+    margin: 0px;
+    width: 200px;
+    height: 80px;
+   }
+ .tabli{
+    margin: 40px;
+   text-align: center;
+    border-radius: 10px;
+    border: 7px solid;
+    width: 60px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+ }
+ .num{
+  text-align: center;
+  border-radius: 10px;
+   color: blue;
+   background-color: black;
+ }
+ .juma{
+  border-radius: 10px;
+ }
+ 

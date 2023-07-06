@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="super_container">
+
+	<!-- Header -->
+
+
+	<!-- Menu -->
+
+
+	<!-- Home -->
+		<div class="container-fluid">
+	<div class="home">
+
+		<!-- Hero Slider -->
+		<div class="hero_slider_container">
+			<div class="hero_slider owl-carousel img_1">
+
+				<!-- Hero Slide -->
+				<div class="hero_slide">
+					<div class="hero_slide_background img_1"  style="background-image:url({% static 'images/1.jpg' %})"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"></h1>
+						</div>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+
+
+
+	<div class="hero_boxes">
+		<div class="hero_boxes_inner">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="{% static 'images/earth-globe.svg' %}" class="svg" alt="">
+							<div class="hero_box_content">
+								<a href="{% url 'courses' %}"><h2 class="hero_box_title">Класстар</h2></a>
+								<a href="courses.html" class="hero_box_link"></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="{% static 'images/books.svg' %}" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title"><a href="{% url 'list-lessons' %}" class="hero_box_link">Библотека</a></h2>
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col">
+						<button class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="{% static 'images/professor.svg' %}" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title"><a style="color: white;" href="{% url 'teachers' %}">Мугалимдер</a></h2>
+							</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		</div>
+		</div>
+	<!-- Popular -->
+
+	<div class="popular page_section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Мыкты окуучулар</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row course_boxes">
+
+				<!-- Popular Course Item -->
+				<div class="col-lg-4 course_box">
+					<div class="card">
+						<img class="card-img-top" src="{% static 'images/sh_1.jpg' %}" alt="https://unsplash.com/@kellybrito">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">2 класс окуучусу</a></div>
+							<div class="card-text"></div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								{% comment %} <img src="{% static 'images/sh_1.jpg' %}" alt="https://unsplash.com/@mehdizadeh"> {% endcomment %}
+							</div>
+							<div class="course_author_name">	
+								Бакытбек уулу Азизбек <span></span></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Popular Course Item -->
+				<div class="col-lg-4 course_box">
+					<div class="card">
+						<img class="card-img-top" src="{% static 'images/sh_3.jpg' %}" alt="https://unsplash.com/@cikstefan">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">3 класс окуучусу</a></div>
+							<div class="card-text"></div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								{% comment %} <img src="{% static 'images/sh_3.jpg' %}" alt="https://unsplash.com/@mehdizadeh"> {% endcomment %}
+							</div>
+							<div class="course_author_name">Бегалиева Айгуль Рафхатовна<span></span></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Popular Course Item -->
+				<div class="col-lg-4 course_box">
+					<div class="card">
+						<img class="card-img-top" src="{% static 'images/sh_2.jpg' %}" alt="https://unsplash.com/@dsmacinnes">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">2 класс окуучусу</a></div>
+							<div class="card-text"></div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								{% comment %} <img src="{% static 'images/sh_2.jpg' %}" alt="https://unsplash.com/@mehdizadeh"> {% endcomment %}
+							</div>
+							<div class="course_author_name">Кочоров Мирлан Мустафаевич<span></span></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Services -->
+
+	<div class="services page_section">
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Кыска маалыматтар</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row services_row">
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="{% static 'images/earth-globe.svg' %}" alt="">
+					</div>
+					<h3>Биздин класстар</h3>
+					<p>Эн мыкты...</p>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="{% static 'images/exam.svg' %}" alt="">
+					</div>
+					<h3>Сабактар</h3>
+					<p>Кызыктуу.</p>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="{% static 'images/books.svg' %}" alt="">
+					</div>
+					<h3>Библотека</h3>
+					<p>Ар турдуу китептер.</p>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="{% static 'images/professor.svg' %}" alt="">
+					</div>
+					<h3>Мугалимдер</h3>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="{% static 'images/blackboard.svg' %}" alt="">
+					</div>
+					<h3>Программалар</h3>
+					<p>Заманбап б ар-турдуу</p>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="{% static 'images/mortarboard.svg' %}" alt="">
+					</div>
+					<h3>Мектепти бүтүп</h3>
+					<p>Аттестат алуу</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Events -->
+
+	
+
+
+
+
+</div>
+
+{% endblock %}
