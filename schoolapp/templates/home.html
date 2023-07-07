@@ -23,7 +23,7 @@
 
 				<!-- Hero Slide -->
 				<div class="hero_slide">
-					<div class="hero_slide_background img_1"  style="background-image:url({% static 'images/1.jpg' %})"></div>
+					<div class="hero_slide_background img_1"  style="background-image:url({% static 'images/bck-ground.jpg' %})"></div>
 					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"></h1>
@@ -56,7 +56,7 @@
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
 							<img src="{% static 'images/books.svg' %}" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title"><a href="{% url 'list-lessons' %}" class="hero_box_link">Библотека</a></h2>
+								<h2 class="hero_box_title"><a href="#" class="hero_box_link">Библотека</a></h2>
 								
 							</div>
 						</div>
@@ -91,11 +91,12 @@
 			<div class="row course_boxes">
 
 				<!-- Popular Course Item -->
+				{% for students in popular %}
 				<div class="col-lg-4 course_box">
 					<div class="card">
-						<img class="card-img-top" src="{% static 'images/sh_1.jpg' %}" alt="https://unsplash.com/@kellybrito">
+						<img class="card-img-top" src="{{ students.students.photo.url }}"><p>{{students.dedcription}}</p>
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">2 класс окуучусу</a></div>
+							<div class="card-title"><a href={% url 'courses' %}>{{students.students.l_class}} класс окуучусу</a></div>
 							<div class="card-text"></div>
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
@@ -103,47 +104,15 @@
 								{% comment %} <img src="{% static 'images/sh_1.jpg' %}" alt="https://unsplash.com/@mehdizadeh"> {% endcomment %}
 							</div>
 							<div class="course_author_name">	
-								Бакытбек уулу Азизбек <span></span></div>
+								{{students.students.first_name}} {{students.students.last_name}} <span></span></div>
 							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
 						</div>
 					</div>
+					
 				</div>
-
+{% endfor %}
 				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
-					<div class="card">
-						<img class="card-img-top" src="{% static 'images/sh_3.jpg' %}" alt="https://unsplash.com/@cikstefan">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">3 класс окуучусу</a></div>
-							<div class="card-text"></div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								{% comment %} <img src="{% static 'images/sh_3.jpg' %}" alt="https://unsplash.com/@mehdizadeh"> {% endcomment %}
-							</div>
-							<div class="course_author_name">Бегалиева Айгуль Рафхатовна<span></span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
-					<div class="card">
-						<img class="card-img-top" src="{% static 'images/sh_2.jpg' %}" alt="https://unsplash.com/@dsmacinnes">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">2 класс окуучусу</a></div>
-							<div class="card-text"></div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								{% comment %} <img src="{% static 'images/sh_2.jpg' %}" alt="https://unsplash.com/@mehdizadeh"> {% endcomment %}
-							</div>
-							<div class="course_author_name">Кочоров Мирлан Мустафаевич<span></span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span></span></div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -1,13 +1,16 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.shortcuts import render
 from news.models import *
 from home.models import *
+
+from .forms import ContactForm
 
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    popular = PopularStudents.objects.all()
+    return render(request, 'home.html', {'popular':popular})
 
 #
 # def studentlist(request, post):
@@ -15,13 +18,9 @@ def home(request):
 #     return render(request, 'students.html', {'student': post})
 
 
-def studentlist(request):
-    students = Student.objects.filter(l_class=1)
+def studentlist(request, pk):
+    students = Student.objects.all()
     return render(request, 'students.html', {'students': students})
-
-def studentlist2(request):
-    students2 = Student.objects.filter(l_class=2)
-    return render(request, 'students2.html', {'students2': students2})
 
 
 def studentdetail(request, pk):
@@ -33,6 +32,9 @@ def teachers(request):
     teacher = Teachers.objects.all()
     return render(request, 'teachers.html', {'teacher': teacher})
 
+def course_detail(request,pk):
+    courses = Courses.objects.get(id=pk)
+    return render(request, )
 
 def courses(request):
     course = Courses.objects.all()
@@ -40,7 +42,23 @@ def courses(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    contacts = Contact.objects.all()
+    schole = Schole.objects.all()
+    
+    if request.method == "POST":  
+        form = ContactForm(request.POST)  
+        if form.is_valid():  
+            try:  
+                form.save() 
+                model = form.instance
+                return redirect('contact')  
+            except:  
+                pass  
+    else:  
+        form = ContactForm()  
+
+    context = {'contacts': contacts,'form':form, 'schole':schole}
+    return render(request, 'contact.html', context)
 
 
 def header(request):

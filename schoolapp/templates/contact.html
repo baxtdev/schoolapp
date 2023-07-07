@@ -42,11 +42,14 @@
 						<div class="contact_title">Кабар калтыруу</div>
 
 						<div class="contact_form_container">
-							<form action="post">
-								<input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required.">
+							<form method="post">
+								{% csrf_token %}
+								{{form.as_p}}
+								{% comment %} <input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required.">
 								<input id="contact_form_email" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required.">
-								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-								<button id="contact_send_btn" type="button" class="contact_send_btn trans_200" value="Submit">жөнөтүү</button>
+								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Message" required="required" data-error="Please, write us a message."></textarea> {% endcomment %}
+								<button id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="Submit">жөнөтүү</button>
+								
 							</form>
 						</div>
 					</div>
@@ -58,25 +61,28 @@
 						<div class="about_title">Билим </div>
 
 						<div class="contact_info">
+							{% for el in schole %}
 							<ul>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
 										<img src="{% static 'images/placeholder.svg' %}" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									г.Ош
+									{{el.title}}
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
 										<img src="{% static 'images/smartphone.svg' %}" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									+996 999 999 999
+									<a href="tel:{{el.number}}">{{el.number}}</a>
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
 										<img src="{% static 'images/envelope.svg' %}" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>bilim_edu@company.com
+									</div>
+									{{el.email}}
 								</li>
 							</ul>
+							{% endfor %}
 						</div>
 
 					</div>

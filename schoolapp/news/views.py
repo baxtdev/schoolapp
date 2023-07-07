@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.db import models
 from news.models import *
 from django.views import generic
+from .forms import CommentsForm
 
-
-# Create your views here.
+ # Create your views here.
 
 
 #home page
@@ -42,7 +42,22 @@ def news(request):
 #
 
 def single_news(request, pk):
-    model = New
-    s_news = model.objects.get(id=pk)
-    return render(request, 'single_news.html', {'s_new': s_news})
+    s_news = New.objects.get(id=pk)
+    comments = Comments.objects.all()
+    if request.method == "POST":  
+        form = CommentsForm(request.POST)  
+        if form.is_valid():  
+            try:  
+                form.save() 
+                model = form.instance
+                return redirect('single_news')  
+            except:  
+                pass  
+    else:  
+        form = CommentsForm()     
+    context = {'s_new': s_news, 'form': form,'coments':comments}
+    
+    return render(request, 'single_news.html', context)
 
+
+    

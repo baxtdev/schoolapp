@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     # apps
     'news.apps.NewsConfig',
     'home.apps.HomeConfig',
-    'quiz.apps.QuizConfig',
 ]
 
 MIDDLEWARE = [
